@@ -1,0 +1,26 @@
+[ui]
+username = Jason Frantz <jfrantz@maprtech.com>
+
+[paths]
+mapr = ssh://mapr@10.250.1.5/releases/trunk
+ivy  = ssh://mapr@10.250.1.5/ivy_repo
+qa  = ssh://mapr@10.250.1.5/qa
+
+[diff]
+nodates=1
+
+[extensions]
+purge =
+fetch =
+graphlog =
+extdiff =
+transplant =
+mq =
+pager =
+
+[extdiff]
+cmd.mdiff = meld
+
+[pager]
+pager = less -FRSX
+attend = annotate, cat, diff, export, glog, incoming, log, qdiff
