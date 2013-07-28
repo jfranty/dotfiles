@@ -22,6 +22,7 @@ export MAILCHECK=0
 export NAME='Jason Frantz'
 export PAGER=less
 export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PS1="\u@\h:\w\$ "
 
 alias dusort='du -s *|sort -n'
 alias ls='ls -h --color=tty'
