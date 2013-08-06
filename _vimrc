@@ -31,8 +31,8 @@ set   cino=(0,:0,l1             " modifications of default C indentation
 "set   comments=b:#,fb:-,n:>,n:)
 set   expandtab                 " expand tabs
 set nojoinspaces                " don't add 2 spaces to start sentence
-set   shiftwidth=2              " autoindent spacing
-set   softtabstop=2             " <Tab> counts for 2 spaces while editing
+set   shiftwidth=4              " autoindent spacing
+set   softtabstop=4             " <Tab> counts for 2 spaces while editing
 set   tabstop=8                 " how much to indent
 set   textwidth=72              " width of screen to type on
 "XXX: vim 7.1 has a script that fucks up formatoptions
@@ -83,7 +83,6 @@ set   pastetoggle=<F2>          " when in insert mode, press <F2> to go
   map ,Sbl :g/^$/,/./-j
 
 " Mappings for C-style comment headers.
-" map <F5> o/<Esc>68a*<Esc>a<CR><CR><BS><Esc>67a*<Esc>a/<CR><Esc>02<Up>$a<Space>
   map <F5> i/*****<Space>*****/<Esc>7ha<Space>
 
 " Mappings to comment blocks of code.
@@ -98,11 +97,7 @@ set   pastetoggle=<F2>          " when in insert mode, press <F2> to go
 
 " Emacs/bash style command-line
   cnoremap      <C-A>   <Home>
-"  cnoremap      <C-B>   <Left>
-"  cnoremap      <C-D>   <Del>
   cnoremap      <C-E>   <End>
-"  cnoremap      <C-F>   <Right>
-
 
 
 " ===============================================
@@ -112,10 +107,6 @@ set   pastetoggle=<F2>          " when in insert mode, press <F2> to go
 " Remove ALL auto-commands in case the vimrc gets read again.
   autocmd!
 
-  " Sprout FileTypes
-  au BufRead,BufNewFile *.ct       set filetype=c
-"  au BufRead,BufNewFile SConstruct set filetype=python
-"  au BufRead,BufNewFile SConscript set filetype=python
   au BufRead,BufNewFile *.ll       set filetype=llvm
   au BufRead,BufNewFile *.proto    set filetype=proto
 
@@ -125,7 +116,7 @@ set   pastetoggle=<F2>          " when in insert mode, press <F2> to go
   " Default FileType settings
   autocmd FileType asm              set com= noet ts=8
   autocmd FileType c,cpp,yacc,lex,python set fo-=t fo+=crqo
-  autocmd FileType html             set noet sw=2 ts=2
+  autocmd FileType html             set noet sw=2 ts=4
   autocmd FileType java             set com=sr:/*,mb:*,elx:*/
   autocmd FileType make             set noet sw=8 ts=8 tw=0
   autocmd FileType ocaml            set com=sr:(*,mb:*,elx:*)
