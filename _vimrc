@@ -109,9 +109,7 @@ set   pastetoggle=<F2>          " when in insert mode, press <F2> to go
 
   au BufRead,BufNewFile *.ll       set filetype=llvm
   au BufRead,BufNewFile *.proto    set filetype=proto
-
-  "TODO Skeletons -
-  "     autocmd BufNewFile *.c  Or ~/skel/skeleton.c
+  au BufRead,BufNewFile *.cu       set filetype=c
 
   " Default FileType settings
   autocmd FileType asm              set com= noet ts=8
@@ -121,16 +119,6 @@ set   pastetoggle=<F2>          " when in insert mode, press <F2> to go
   autocmd FileType make             set noet sw=8 ts=8 tw=0
   autocmd FileType ocaml            set com=sr:(*,mb:*,elx:*)
   autocmd FileType sh               set sw=4 ts=8
-
-
-" ===============================================
-" CTAGS
-" ===============================================
-
-" Rebuild the tag file in the dir of the current source file.
-"  nmap ,t :!(cd %:p:h;ctags *.[ch])&
-
-"  set tags=tags
 
 " ===============================================
 " COLORS
