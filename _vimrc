@@ -48,6 +48,7 @@ set   textwidth=72              " width of screen to type on
 set   formatoptions+=2          " format sentences from 2nd line
 
 set   background=dark           " type in the dark
+set   laststatus=2              " always show last status
 set   ruler                     " always show cursor position
 set   showcmd                   " Show partial commands in the status line
 set   showmode                  " Show the current mode
@@ -64,7 +65,7 @@ set   pastetoggle=<F2>          " when in insert mode, press <F2> to go
 " MAPPINGS
 " ===============================================
 
-map ^ :nohlsearch<CR>
+map ^ :set hlsearch!<CR>
 
 " Make both backspace keys work as backspace.
 map! <C-?> <BS>
