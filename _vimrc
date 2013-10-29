@@ -1,13 +1,20 @@
+set nocompatible                " must be first, since it affects
+                                " subsequent initialization
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+syntax on
+
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
+
+filetype on
+filetype plugin indent on
+
 " ===============================================
 " OPTIONS
 " ===============================================
-
-" Use vim settings, rather then vi settings (much better!) This must be
-" first, because it changes other options as a side effect.
-set nocompatible
-
-filetype on
-filetype indent on              " turn on default filetype indentation
 
 set   hidden                    " allow hidden buffers
 set   history=1000
@@ -56,82 +63,63 @@ set   pastetoggle=<F2>          " when in insert mode, press <F2> to go
 " MAPPINGS
 " ===============================================
 
-  map ^ :nohlsearch<CR>
+map ^ :nohlsearch<CR>
 
 " Make both backspace keys work as backspace.
-  map! <C-?> <BS>
-  map! <C-H> <BS>
+map! <C-?> <BS>
+map! <C-H> <BS>
 
 " Disable suspend via ^Z. Instead just go to the shell.
-  map <C-Z> :shell
+map <C-Z> :shell
 
 " Mappings for timestamping. This uses an internal command.
 " map ,L  1G/Last update:\s*/e+1<CR>CYDATE<ESC>
 " map ,,L 1G/Last change:\s*/e+1<CR>CYDATE<ESC>
 
 " Titlise selected text
-  vmap ,t :s/\<\(.\)\(\k*\)\>/\u\1\L\2/g<bar>:nohlsearch<cr>
+vmap ,t :s/\<\(.\)\(\k*\)\>/\u\1\L\2/g<bar>:nohlsearch<cr>
 " Titlise a line
-  nmap ,t :s/.*/\L&/<bar>:s/\<./\u&/g<bar>:nohlsearch<cr>
+nmap ,t :s/.*/\L&/<bar>:s/\<./\u&/g<bar>:nohlsearch<cr>
 
 " Squeeze empty lines - Converts blocks of empty lines within
 " current visual into one empty line.
-  map ,Sel :g/^$/,/./-j
+map ,Sel :g/^$/,/./-j
 
 " Squeeze blank lines - Converts blocks of blank lines within
 " current visual into one empty line.
-  map ,Sbl :g/^$/,/./-j
+map ,Sbl :g/^$/,/./-j
 
 " Mappings for C-style comment headers.
-  map <F5> i/*****<Space>*****/<Esc>7ha<Space>
+map <F5> i/*****<Space>*****/<Esc>7ha<Space>
 
 " Mappings to comment blocks of code.
 "  vmap ,# "zdi#if 0<CR><C-R>z#endif<CR><ESC>
 "  vmap ,* :s/#\(if 0\\|endif\)\n//<CR>
-  map ,/ :s/^/\/\//<CR> <Esc>:nohlsearch<CR>
-  map ,# :s/^/#/<CR> <Esc>:nohlsearch <CR>
-  map ," :s/^/\"/<CR> <Esc>:nohlsearch<CR>
-  map ,% :s/^/%/<CR> <Esc>:nohlsearch<CR>
+map ,/ :s/^/\/\//<CR> <Esc>:nohlsearch<CR>
+map ,# :s/^/#/<CR> <Esc>:nohlsearch <CR>
+map ," :s/^/\"/<CR> <Esc>:nohlsearch<CR>
+map ,% :s/^/%/<CR> <Esc>:nohlsearch<CR>
 " Mapping to uncomment blocks of code.
-  map ,c :s/^\/\/\\|^--\\|^> \\|^[#"%!;]//<CR> <Esc>:nohlsearch<CR>
+map ,c :s/^\/\/\\|^--\\|^> \\|^[#"%!;]//<CR> <Esc>:nohlsearch<CR>
 
 " Emacs/bash style command-line
-  cnoremap      <C-A>   <Home>
-  cnoremap      <C-E>   <End>
+cnoremap    <C-A>   <Home>
+cnoremap    <C-E>   <End>
 
 
 " ===============================================
 " AUTOCOMMANDS
 " ===============================================
 
-" Remove ALL auto-commands in case the vimrc gets read again.
-  autocmd!
+au BufRead,BufNewFile *.ll       set filetype=llvm
+au BufRead,BufNewFile *.proto    set filetype=proto
+au BufRead,BufNewFile *.cu       set filetype=c
 
-  au BufRead,BufNewFile *.ll       set filetype=llvm
-  au BufRead,BufNewFile *.proto    set filetype=proto
-  au BufRead,BufNewFile *.cu       set filetype=c
-
-  " Default FileType settings
-  autocmd FileType asm              set com= noet ts=8
-  autocmd FileType c,cpp,yacc,lex,python set fo-=t fo+=crqo
-  autocmd FileType html             set noet sw=2 ts=4
-  autocmd FileType java             set com=sr:/*,mb:*,elx:*/
-  autocmd FileType make             set noet sw=8 ts=8 tw=0
-  autocmd FileType ocaml            set com=sr:(*,mb:*,elx:*)
-  autocmd FileType sh               set sw=4 ts=8
-
-" ===============================================
-" COLORS
-" ===============================================
-
-" If the filename matches a syntax file, we turn on highlighting.
-  if has("syntax")
-    syntax on
-  endif
-
-" We know xterm-debian is a color terminal
-  if &term =~ "xterm-debian" || &term =~ "xterm-xfree86"
-    set t_Co=16
-    set t_Sf=[3%dm
-    set t_Sb=[4%dm
-  endif
+" Default FileType settings
+autocmd FileType asm              set com= noet ts=8
+autocmd FileType c,cpp,yacc,lex,python set fo-=t fo+=crqo
+autocmd FileType html             set noet sw=2 ts=4
+autocmd FileType java             set com=sr:/*,mb:*,elx:*/
+autocmd FileType make             set noet sw=8 ts=8 tw=0
+autocmd FileType ocaml            set com=sr:(*,mb:*,elx:*)
+autocmd FileType sh               set sw=4 ts=8
