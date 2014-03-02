@@ -1,5 +1,11 @@
 [user]
-	name = Jason Frantz
-	email = jasondfrantz@gmail.com
+    name = Jason Frantz
+    email = jasondfrantz@gmail.com
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
+[alias]
+    lg = log --graph --decorate --oneline
+    s = status -s
+    st = status -s
+[color]
+    ui = auto
