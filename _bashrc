@@ -16,13 +16,17 @@ export HISTTIMEFORMAT='%b %d %H:%M:%S: '
 # save multi-line entries as a single entry
 set cmdhist
 
-export ARCH=`uname -i`
 export EDITOR=/usr/bin/vim
 export MAILCHECK=0
 export NAME='Jason Frantz'
 export PAGER=less
+
+export GREP_OPTIONS="--color=auto"
+
 export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PS1="\u@\h:\w\$ "
+
+export GOPATH=~/go
 
 alias dusort='du -s *|sort -n'
 alias ls='ls -h --color=tty'
@@ -30,14 +34,7 @@ alias pu=pushd
 alias po=popd
 alias vi=vim
 
-# tagging commands
 alias r_="rename 's/\ /_/g' *"
-alias mp3C='mp3info *.mp3|grep Comment:'
-alias mp3x='mp3info -x *.mp3|grep Audio:'
-
-alias grep='grep --color'
-#alias sgrep='grep -rI --exclude=tags'
-#alias sgrep='grep --include=*.[ch]'
 
 alias mq='hg -R $(hg root)/.hg/patches'
 
