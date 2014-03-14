@@ -16,6 +16,7 @@ export HISTTIMEFORMAT='%b %d %H:%M:%S: '
 # save multi-line entries as a single entry
 set cmdhist
 
+export ARCH=`uname -s`
 export EDITOR=/usr/bin/vim
 export MAILCHECK=0
 export NAME='Jason Frantz'
@@ -28,17 +29,20 @@ export PS1="\u@\h:\w\$ "
 
 export GOPATH=~/go
 
-alias dusort='du -s *|sort -n'
-alias ls='ls -h --color=tty'
+if [[ $ARCH -eq "Darwin" ]]; then
+    alias ls='ls -h -G'
+else
+    alias ls='ls -h --color=tty'
+fi
+
 alias pu=pushd
 alias po=popd
 alias vi=vim
 
+alias dusort='du -s *|sort -n'
 alias r_="rename 's/\ /_/g' *"
 
 alias mq='hg -R $(hg root)/.hg/patches'
-
-alias kdf3='kdiff3 --cs "FileAntiPattern=*.orig;*.o;*.obj;tags;*.pyc;.sconsign.dblite" --cs "DirAntiPattern=CVS;.deps;.svn;.hg;build" p2.0 p2.0-bigc/'
 
 ulimit -c unlimited
 
