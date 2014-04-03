@@ -65,7 +65,7 @@ set   pastetoggle=<F2>          " when in insert mode, press <F2> to go
 " MAPPINGS
 " ===============================================
 
-map ^ :set hlsearch!<CR>
+map ^ :noh<CR>
 
 " Make both backspace keys work as backspace.
 map! <C-?> <BS>

@@ -29,7 +29,7 @@ export PS1="\u@\h:\w\$ "
 
 export GOPATH=~/go
 
-if [[ $ARCH -eq "Darwin" ]]; then
+if [[ $ARCH == "Darwin" ]]; then
     alias ls='ls -h -G'
 else
     alias ls='ls -h --color=tty'

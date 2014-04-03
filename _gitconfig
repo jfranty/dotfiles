@@ -5,6 +5,7 @@
     helper = cache --timeout=3600
 [alias]
     lg = log --graph --decorate --oneline
+    lgf = log --stat --decorate
     s = status -sb
     st = status -sb
 [color]
