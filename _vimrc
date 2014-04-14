@@ -122,6 +122,6 @@ autocmd FileType asm              set com= noet ts=8
 autocmd FileType c,cpp,yacc,lex,python set fo-=t fo+=crqo
 autocmd FileType html             set noet sw=2 ts=4
 autocmd FileType java             set com=sr:/*,mb:*,elx:*/
-autocmd FileType make             set noet sw=8 ts=8 tw=0
+autocmd FileType make             set noet tw=0
 autocmd FileType ocaml            set com=sr:(*,mb:*,elx:*)
 autocmd FileType sh               set sw=4 ts=8
