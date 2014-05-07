@@ -10,6 +10,8 @@ Bundle 'gmarik/vundle'
 Bundle 'guns/vim-clojure-static'
 Bundle 'jpalardy/vim-slime'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'jnwhiteh/vim-golang'
+" Bundle 'jnwhiteh/vim-golang'
+Bundle 'fatih/vim-go'
+Bundle 'rking/ag.vim'
 
 filetype on
