@@ -121,6 +121,7 @@ au BufRead,BufNewFile *.cu       set filetype=c
 autocmd FileType asm              set com= noet ts=8
 autocmd FileType c,cpp,yacc,lex,python set fo-=t fo+=crqo
 autocmd FileType html             set noet sw=2 ts=4
+autocmd FileType gitconfig        set noet sw=8 ts=8
 autocmd FileType go               set noet ts=8 sw=8 tw=0
 " autocmd FileType go autocmd BufWritePre <buffer> Fmt
 autocmd FileType make             set noet tw=0
