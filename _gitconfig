@@ -9,6 +9,9 @@
 	lgf = log --stat --decorate
 	s = status -sb
 	st = status -sb
+	in = !git fetch && git log --abbrev-commit --graph ..@{u}
+	out = log --abbrev-commit --graph @{u}..
+	co = checkout
 [color]
 	ui = auto
 [push]
