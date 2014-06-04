@@ -27,7 +27,7 @@ export GREP_OPTIONS="--color=auto"
 export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PS1="\u@\h:\w\$ "
 
-export GOPATH=~/go
+export GOPATH=~/.go
 
 if [[ $ARCH == "Darwin" ]]; then
     . ~/.bashrc.darwin
