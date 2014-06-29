@@ -13,5 +13,6 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'fatih/vim-go'
 Bundle 'rking/ag.vim'
 Bundle 'ivanov/vim-ipython'
+Bundle 'wting/rust.vim'
 
 filetype on
