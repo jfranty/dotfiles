@@ -13,7 +13,12 @@
 	out = log --stat --decorate @{u}..
 	co = checkout
 	br = branch -v
+	vd = difftool
 [color]
 	ui = auto
 [push]
 	default = simple
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
