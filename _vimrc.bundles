@@ -14,5 +14,7 @@ Bundle 'fatih/vim-go'
 Bundle 'rking/ag.vim'
 Bundle 'ivanov/vim-ipython'
 Bundle 'wting/rust.vim'
+Bundle 'vim-scripts/Align'
+Bundle 'vim-scripts/SQLUtilities'
 
 filetype on
