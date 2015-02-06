@@ -5,16 +5,19 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-Bundle 'guns/vim-clojure-static'
-Bundle 'jpalardy/vim-slime'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'fatih/vim-go'
-Bundle 'rking/ag.vim'
-Bundle 'ivanov/vim-ipython'
-Bundle 'wting/rust.vim'
-Bundle 'vim-scripts/Align'
-Bundle 'vim-scripts/SQLUtilities'
+Plugin 'guns/vim-clojure-static'
+Plugin 'jpalardy/vim-slime'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'fatih/vim-go'
+Plugin 'rking/ag.vim'
+Plugin 'ivanov/vim-ipython'
+Plugin 'wting/rust.vim'
+Plugin 'vim-scripts/Align'
+Plugin 'vim-scripts/SQLUtilities'
+Plugin 'uarun/vim-protobuf'
+Plugin 'solarnz/thrift.vim'
+Plugin 'pangloss/vim-javascript'
 
 filetype on

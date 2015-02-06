@@ -24,10 +24,10 @@ export PAGER=less
 
 export GREP_OPTIONS="--color=auto"
 
-export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-export PS1="\u@\h:\w\$ "
+export GOPATH=~/
 
-export GOPATH=~/.go
+export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$GOPATH/bin
+export PS1="\u@\h:\w\$ "
 
 if [[ $ARCH == "Darwin" ]]; then
     . ~/.bashrc.darwin

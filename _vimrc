@@ -53,6 +53,7 @@ set   textwidth=72              " width of screen to type on
 set   formatoptions+=2          " format sentences from 2nd line
 
 set   background=dark           " type in the dark
+set   t_Co=256                  " more colors
 set   laststatus=2              " always show last status
 set   ruler                     " always show cursor position
 set   showcmd                   " Show partial commands in the status line
@@ -121,6 +122,7 @@ cnoremap    <C-E>   <End>
 au BufRead,BufNewFile *.ll       set filetype=llvm
 au BufRead,BufNewFile *.proto    set filetype=proto
 au BufRead,BufNewFile *.cu       set filetype=c
+au BufRead,BufNewFile *.avdl     set filetype=java
 
 " Default FileType settings
 autocmd FileType asm              set com= noet ts=8
@@ -129,5 +131,6 @@ autocmd FileType html             set noet sw=2 ts=4
 autocmd FileType gitconfig        set noet sw=8 ts=8
 autocmd FileType go               set noet ts=8 sw=8 tw=0
 autocmd FileType java             set ts=2 sw=2 softtabstop=0
-autocmd FileType make             set noet tw=0
+autocmd FileType make             set noet ts=4 tw=0
+autocmd FileType proto            set cin
 autocmd FileType sh               set sw=4 ts=8
