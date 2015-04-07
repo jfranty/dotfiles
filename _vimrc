@@ -125,12 +125,15 @@ au BufRead,BufNewFile *.cu       set filetype=c
 au BufRead,BufNewFile *.avdl     set filetype=java
 
 " Default FileType settings
-autocmd FileType asm              set com= noet ts=8
+autocmd FileType asm              set com= noet sts=8
 autocmd FileType c,cpp,yacc,lex,python set fo-=t fo+=crqo
-autocmd FileType html             set noet sw=2 ts=4
-autocmd FileType gitconfig        set noet sw=8 ts=8
-autocmd FileType go               set noet ts=8 sw=8 tw=0
-autocmd FileType java             set ts=2 sw=2 softtabstop=0
-autocmd FileType make             set noet ts=4 tw=0
+autocmd FileType html             set noet sts=2 sw=2
+autocmd FileType gitconfig        set noet sw=8 sts=8
+autocmd FileType go               set noet sw=8 tw=0
+autocmd FileType java             set sts=2 sw=2
+autocmd FileType javascript       set sts=2 sw=2 tw=0
+autocmd FileType make             set noet sts=4 tw=0
 autocmd FileType proto            set cin
-autocmd FileType sh               set sw=4 ts=8
+autocmd FileType sh               set sw=4 sts=8
+
+" let g:go_fmt_command = "goimports"
