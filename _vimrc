@@ -7,6 +7,9 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
+" profile start syntastic.log
+" profile! file */syntastic/*
+
 " Syntax highlighting doesn't work well with vimdiff.
 if &diff
   syntax off
@@ -136,4 +139,21 @@ autocmd FileType make             set noet sts=4 tw=0
 autocmd FileType proto            set cin
 autocmd FileType sh               set sw=4 sts=8
 
+
+" ===============================================
+" PLUGINS
+" ===============================================
+
 " let g:go_fmt_command = "goimports"
+
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+" XXX JDF: too damn slow...
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['eslint']

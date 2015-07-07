@@ -19,5 +19,8 @@ Plugin 'vim-scripts/SQLUtilities'
 Plugin 'uarun/vim-protobuf'
 Plugin 'solarnz/thrift.vim'
 Plugin 'pangloss/vim-javascript'
+" Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
 
 filetype on
