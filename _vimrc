@@ -31,6 +31,7 @@ set   undolevels=1000
 set   viminfo='20,\"50          " how much session information vim stores
 set nobackup                    " don't backup
 set   directory=~/.tmp,~/tmp,/var/tmp,/tmp
+set   fileformats+=mac
                                 " store swap files in one of these directories
 "set   mouse=a                   " use the mouse
 "set   mousehide                 " hide the mouse pointer when typing
@@ -42,7 +43,7 @@ set   wildmode=longest:full     " complete common string, then wildmenu
 set   wildmenu                  " show possible completion matches
 
 set   autoindent                " automatically indent
-set   backspace=2               " allow backspacing over indent, sol, eol
+set   backspace=indent,eol,start
 set   cino=(0,:0,l1             " modifications of default C indentation
 "set   comments=b:#,fb:-,n:>,n:)
 set   expandtab                 " expand tabs
@@ -53,7 +54,7 @@ set   tabstop=8                 " how much to indent
 set   textwidth=72              " width of screen to type on
 "XXX: vim 7.1 has a script that fucks up formatoptions
 "set   formatoptions=tcrqn2      " autoformat comments (e.g. autowrap)
-set   formatoptions+=2          " format sentences from 2nd line
+set   formatoptions+=2j         " format sentences from 2nd line
 
 set   background=dark           " type in the dark
 set   t_Co=256                  " more colors
@@ -62,6 +63,7 @@ set   ruler                     " always show cursor position
 set   showcmd                   " Show partial commands in the status line
 set   showmode                  " Show the current mode
 set   report=0                  " always show changes
+set   display=lastline          " show partial lines
 
 set   esckeys                   " allow use of cursor keys in insert mode
 set   hlsearch                  " highlight search terms
@@ -129,7 +131,7 @@ au BufRead,BufNewFile *.avdl     set filetype=java
 
 " Default FileType settings
 autocmd FileType asm              set com= noet sts=8
-autocmd FileType c,cpp,yacc,lex,python set fo-=t fo+=crqo
+autocmd FileType c,cpp,python set fo-=t fo+=crqo
 autocmd FileType html             set noet sts=2 sw=2
 autocmd FileType gitconfig        set noet sw=8 sts=8
 autocmd FileType go               set noet sw=8 tw=0
@@ -137,7 +139,9 @@ autocmd FileType java             set sts=2 sw=2
 autocmd FileType javascript       set sts=2 sw=2 tw=0
 autocmd FileType make             set noet sts=4 tw=0
 autocmd FileType proto            set cin
+autocmd FileType thrift           set sts=2
 autocmd FileType sh               set sw=4 sts=8
+autocmd FileType yacc             set noet sts=8 tw=0
 
 
 " ===============================================
