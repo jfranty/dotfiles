@@ -24,5 +24,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
+" Plugin 'chriskempson/base16-vim'
 
 filetype on

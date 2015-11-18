@@ -17,7 +17,7 @@ export HISTTIMEFORMAT='%b %d %H:%M:%S: '
 set cmdhist
 
 export ARCH=`uname -s`
-export EDITOR=/usr/bin/vim
+export EDITOR=vim
 export MAILCHECK=0
 export NAME='Jason Frantz'
 export PAGER=less

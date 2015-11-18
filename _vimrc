@@ -157,9 +157,10 @@ autocmd FileType yacc             set noet sts=8 tw=0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 " XXX JDF: too damn slow...
-let g:syntastic_mode_map = { "mode": "passive" }
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_mode_map = { "mode": "passive" }
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
 
 let g:syntastic_go_checkers = ['gofmt']
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
