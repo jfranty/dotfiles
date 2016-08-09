@@ -131,10 +131,11 @@ au BufRead,BufNewFile *.avdl     set filetype=java
 
 " Default FileType settings
 autocmd FileType asm              set com= noet sts=8
-autocmd FileType c,cpp,python set fo-=t fo+=crqo
+autocmd FileType c,cpp,python set fo-=t fo+=crqo sts=4
 autocmd FileType html             set noet sts=2 sw=2
 autocmd FileType gitconfig        set noet sw=8 sts=8
 autocmd FileType go               set noet sw=8 tw=0
+autocmd FileType less             set sts=2 sw=2
 autocmd FileType java             set sts=2 sw=2
 autocmd FileType javascript       set sts=2 sw=2 tw=0
 autocmd FileType make             set noet sts=4 tw=0
@@ -150,6 +151,8 @@ autocmd FileType yacc             set noet sts=8 tw=0
 
 " let g:go_fmt_command = "goimports"
 
+let g:rustfmt_autosave = 1
+
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
@@ -161,6 +164,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
+let g:syntastic_c_remove_include_errors = 1
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_go_checkers = ['gofmt']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint_d'
+
+let g:jsx_ext_required = 0
