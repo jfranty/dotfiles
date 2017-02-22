@@ -3,7 +3,7 @@ defscrollback 20000     # default scrollback value for new windows
 escape ^xx              # change command character to ^x
 
 bell_msg "^G^Gbell in window %n"
-#vbell on
+vbell on
 
 
 # remove some stupid / dangerous key bindings

@@ -44,7 +44,7 @@ alias r_="rename 's/\ /_/g' *"
 
 alias mq='hg -R $(hg root)/.hg/patches'
 
-alias pp='python -c "import sys, json; print json.dumps(json.load(sys.stdin), sort_keys=True, indent=4)"'
+alias q='QHOME=~/Downloads/q rlwrap ~/Downloads/q/m32/q'
 
 ulimit -c unlimited
 

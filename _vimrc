@@ -139,7 +139,7 @@ autocmd FileType less             set sts=2 sw=2
 autocmd FileType java             set sts=2 sw=2
 autocmd FileType javascript       set sts=2 sw=2 tw=0
 autocmd FileType make             set noet sts=4 tw=0
-autocmd FileType proto            set cin
+autocmd FileType proto            set sts=2 fo-=t fo+=crqo
 autocmd FileType thrift           set sts=2
 autocmd FileType sh               set sw=4 sts=8
 autocmd FileType yacc             set noet sts=8 tw=0
@@ -152,6 +152,7 @@ autocmd FileType yacc             set noet sts=8 tw=0
 " let g:go_fmt_command = "goimports"
 
 let g:rustfmt_autosave = 1
+" let g:rustfmt_fail_silently = 1
 
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
@@ -171,4 +172,5 @@ let g:syntastic_go_checkers = ['gofmt']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
-let g:jsx_ext_required = 0
+let g:racer_cmd = expand("~/.cargo/bin/racer")
+" let $RUST_SRC_PATH = expand("~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/")
