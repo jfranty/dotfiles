@@ -22,12 +22,13 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 " Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 " Plugin 'chriskempson/base16-vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'racer-rust/vim-racer'
+Plugin 'sbdchd/neoformat'
+Plugin 'w0rp/ale'
 
 call vundle#end()
 filetype plugin indent on

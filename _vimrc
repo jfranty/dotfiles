@@ -48,8 +48,8 @@ set   cino=(0,:0,l1             " modifications of default C indentation
 "set   comments=b:#,fb:-,n:>,n:)
 set   expandtab                 " expand tabs
 set nojoinspaces                " don't add 2 spaces to start sentence
-set   shiftwidth=4              " autoindent spacing
-set   softtabstop=4             " <Tab> counts for 2 spaces while editing
+set   shiftwidth=2              " autoindent spacing
+set   softtabstop=2             " <Tab> counts for 2 spaces while editing
 set   tabstop=8                 " how much to indent
 set   textwidth=72              " width of screen to type on
 "XXX: vim 7.1 has a script that fucks up formatoptions
@@ -144,33 +144,27 @@ autocmd FileType thrift           set sts=2
 autocmd FileType sh               set sw=4 sts=8
 autocmd FileType yacc             set noet sts=8 tw=0
 
-
 " ===============================================
 " PLUGINS
 " ===============================================
 
-" let g:go_fmt_command = "goimports"
-
 let g:rustfmt_autosave = 1
 " let g:rustfmt_fail_silently = 1
 
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-" XXX JDF: too damn slow...
-" let g:syntastic_mode_map = { "mode": "passive" }
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-
-let g:syntastic_c_remove_include_errors = 1
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
-let g:syntastic_go_checkers = ['gofmt']
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint_d'
-
 let g:racer_cmd = expand("~/.cargo/bin/racer")
 " let $RUST_SRC_PATH = expand("~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/")
+
+let g:javascript_plugin_flow = 1
+let g:jsx_ext_required = 0
+
+let g:ale_fixers = {
+\  'javascript': ['eslint'],
+\}
+let g:ale_fix_on_save = 1
+
+let g:neoformat_enabled_css = ['prettier']
+let g:neoformat_enabled_less = ['prettier']
+autocmd BufWritePre *.{css,less} Neoformat
+let g:neoformat_enabled_json = ['prettier']
+
+let g:sqlutil_align_comma = 1
