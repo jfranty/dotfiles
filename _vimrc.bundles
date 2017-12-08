@@ -29,6 +29,9 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'racer-rust/vim-racer'
 Plugin 'sbdchd/neoformat'
 Plugin 'w0rp/ale'
+" Plugin 'fleischie/vim-styled-components'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'wincent/ferret'
 
 call vundle#end()
 filetype plugin indent on

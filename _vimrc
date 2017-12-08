@@ -150,7 +150,7 @@ autocmd FileType yacc             set noet sts=8 tw=0
 
 let g:rustfmt_autosave = 1
 " let g:rustfmt_fail_silently = 1
-
+let g:ale_rust_cargo_use_check = 1
 let g:racer_cmd = expand("~/.cargo/bin/racer")
 " let $RUST_SRC_PATH = expand("~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/")
 
@@ -166,5 +166,6 @@ let g:neoformat_enabled_css = ['prettier']
 let g:neoformat_enabled_less = ['prettier']
 autocmd BufWritePre *.{css,less} Neoformat
 let g:neoformat_enabled_json = ['prettier']
+" autocmd BufWritePre *.{json} Neoformat
 
 let g:sqlutil_align_comma = 1

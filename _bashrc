@@ -16,7 +16,6 @@ export HISTTIMEFORMAT='%b %d %H:%M:%S: '
 # save multi-line entries as a single entry
 set cmdhist
 
-export ARCH=`uname -s`
 export EDITOR=vim
 export MAILCHECK=0
 export NAME='Jason Frantz'
@@ -29,11 +28,14 @@ export GOPATH=~/
 export PATH=$HOME/bin:$HOME/.cargo/bin:$GOPATH/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PS1="\u@\h:\w\$ "
 
+ARCH=`uname -s`
 if [[ $ARCH == "Darwin" ]]; then
     . ~/.bashrc.darwin
 else
     . ~/.bashrc.linux
 fi
+
+. ~/.bashrc.local
 
 alias pu=pushd
 alias po=popd
