@@ -1,9 +1,3 @@
-#if [ "$TERM" -eq "screen" ]; then
-#        stty erase ""
-#fi
-
-#bind SPACE:magic-space
-
 export HISTSIZE=20000
 export HISTFILESIZE=20000
 # aggressively write history
@@ -15,6 +9,10 @@ export HISTCONTROL='ignoreboth'
 export HISTTIMEFORMAT='%b %d %H:%M:%S: '
 # save multi-line entries as a single entry
 set cmdhist
+# ulimit -c unlimited
+
+export PATH=$HOME/bin:$HOME/.cargo/bin:$GOPATH/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PS1="\u@\h:\w\$ "
 
 export EDITOR=vim
 export MAILCHECK=0
@@ -25,9 +23,6 @@ export GREP_OPTIONS="--color=auto"
 
 export GOPATH=~/
 
-export PATH=$HOME/bin:$HOME/.cargo/bin:$GOPATH/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-export PS1="\u@\h:\w\$ "
-
 ARCH=`uname -s`
 if [[ $ARCH == "Darwin" ]]; then
     . ~/.bashrc.darwin
@@ -35,7 +30,7 @@ else
     . ~/.bashrc.linux
 fi
 
-. ~/.bashrc.local
+[ -f ~/.bashrc.local ] && . ~/.bashrc.local
 
 alias pu=pushd
 alias po=popd
@@ -43,12 +38,6 @@ alias vi=vim
 
 alias dusort='du -s *|sort -n'
 alias r_="rename 's/\ /_/g' *"
-
-alias mq='hg -R $(hg root)/.hg/patches'
-
-alias q='QHOME=~/Downloads/q rlwrap ~/Downloads/q/m32/q'
-
-ulimit -c unlimited
 
 # Conversions
 h2d() { /bin/echo 16i "$*" p | tr abcdef ABCDEF | /usr/bin/dc; }
@@ -66,5 +55,3 @@ o2b() { /bin/echo 2o 8i "$*" p | /usr/bin/dc; }
 b2h() { /bin/echo 16o 2i "$*" p | /usr/bin/dc; }
 b2d() { /bin/echo 2i "$*" p | /usr/bin/dc; }
 b2o() { /bin/echo 8o 2i "$*" p | /usr/bin/dc; }
-
-bug() { /usr/bin/links -dump http://bugs/show_bug.cgi?id="$*" | less; }

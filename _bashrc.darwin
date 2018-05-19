@@ -2,3 +2,5 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias ls='ls -h -G'
 
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+alias q='QHOME=~/Downloads/q rlwrap ~/Downloads/q/m32/q'
