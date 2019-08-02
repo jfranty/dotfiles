@@ -52,12 +52,8 @@ set   shiftwidth=2              " autoindent spacing
 set   softtabstop=2             " <Tab> counts for 2 spaces while editing
 set   tabstop=8                 " how much to indent
 set   textwidth=72              " width of screen to type on
-"XXX: vim 7.1 has a script that fucks up formatoptions
-"set   formatoptions=tcrqn2      " autoformat comments (e.g. autowrap)
-set   formatoptions+=2j         " format sentences from 2nd line
+set   formatoptions=tcrqn2j     " autoformat comments (e.g. autowrap)
 
-set   background=dark           " type in the dark
-set   t_Co=256                  " more colors
 set   laststatus=2              " always show last status
 set   ruler                     " always show cursor position
 set   showcmd                   " Show partial commands in the status line
@@ -71,6 +67,12 @@ set   incsearch                 " show search matches as you type
 set   showmatch                 " show matching brackets for parentheses
 set   pastetoggle=<F2>          " when in insert mode, press <F2> to go
                                 " to paste mode
+
+set   background=dark           " type in the dark
+set   t_Co=256                  " more colors
+let g:seoul256_background = 233
+colo seoul256
+
 
 " ===============================================
 " MAPPINGS

@@ -2,7 +2,7 @@
 	name = Jason Frantz
 	email = jasondfrantz@gmail.com
 [credential]
-	helper = cache --timeout=3600
+	helper = store
 [alias]
 	last = log --graph --decorate --oneline -n 10
 	lg = log --graph --decorate --oneline
