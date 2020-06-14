@@ -1,0 +1,24 @@
+export EDITOR=vim
+export NAME='Jason Frantz'
+export PAGER=bat
+export PROMPT='%~ %# '
+
+alias pu=pushd
+alias po=popd
+alias vi=vim
+
+alias dusort='du -sh *|sort -h'
+alias r_="rename 's/\ /_/g' *"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+
+ARCH=`uname -s`
+if [[ $ARCH == "Darwin" ]]; then
+    alias ls='ls -h -G'
+else
+    alias ls='ls -h --color=tty'
+fi
+
+[ -f ~/.zshenv.local ] && . ~/.zshenv.local

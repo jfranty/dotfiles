@@ -1,0 +1,4 @@
+. ~/.zshenv
+
+set -o emacs
+bindkey " " magic-space
