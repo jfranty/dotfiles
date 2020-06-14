@@ -126,10 +126,11 @@ cnoremap    <C-E>   <End>
 " AUTOCOMMANDS
 " ===============================================
 
-au BufRead,BufNewFile *.ll       set filetype=llvm
-au BufRead,BufNewFile *.proto    set filetype=proto
-au BufRead,BufNewFile *.cu       set filetype=c
-au BufRead,BufNewFile *.avdl     set filetype=java
+au BufRead,BufNewFile *.ll        set filetype=llvm
+au BufRead,BufNewFile *.proto     set filetype=proto
+au BufRead,BufNewFile *.cu        set filetype=c
+au BufRead,BufNewFile *.avdl      set filetype=java
+au BufRead,BufNewFile *.tsx       set filetype=javascript.jsx syntax=typescript.tsx
 
 " Default FileType settings
 autocmd FileType asm              set com= noet sts=8
@@ -139,12 +140,25 @@ autocmd FileType gitconfig        set noet sw=8 sts=8
 autocmd FileType go               set noet sw=8 tw=0
 autocmd FileType less             set sts=2 sw=2
 autocmd FileType java             set sts=2 sw=2
-autocmd FileType javascript       set sts=2 sw=2 tw=0
+autocmd FileType javascript,typescript  set sts=2 sw=2 tw=0
 autocmd FileType make             set noet sts=4 tw=0
 autocmd FileType proto            set sts=2 fo-=t fo+=crqo
 autocmd FileType thrift           set sts=2
 autocmd FileType sh               set sw=4 sts=8
 autocmd FileType yacc             set noet sts=8 tw=0
+
+" Formatting
+au FileType javascript            setlocal formatprg=prettier
+au FileType json                  setlocal formatprg=prettier\ --parser\ json
+au FileType typescript            setlocal formatprg=prettier\ --parser\ typescript
+au FileType javascript.jsx        setlocal formatprg=prettier\ --parser\ typescript
+
+function ShowGitDiff()
+  new +set\ filetype=diff | silent read !git diff --cached
+endfunction
+
+autocmd FileType gitcommit exec ShowGitDiff()
+autocmd FileType gitcommit cnoreabbrev q quitall
 
 " ===============================================
 " PLUGINS
@@ -156,11 +170,11 @@ let g:ale_rust_cargo_use_check = 1
 let g:racer_cmd = expand("~/.cargo/bin/racer")
 " let $RUST_SRC_PATH = expand("~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/")
 
-let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 
 let g:ale_fixers = {
 \  'javascript': ['eslint'],
+\  'typescript': ['eslint'],
 \}
 let g:ale_fix_on_save = 1
 

@@ -36,7 +36,7 @@ alias pu=pushd
 alias po=popd
 alias vi=vim
 
-alias dusort='du -s *|sort -n'
+alias dusort='du -sh *|sort -h'
 alias r_="rename 's/\ /_/g' *"
 
 # Conversions
