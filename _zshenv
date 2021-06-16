@@ -1,6 +1,7 @@
 export EDITOR=vim
 export NAME='Jason Frantz'
-export PAGER=bat
+export PAGER=less
+export PATH=$HOME/bin:$HOME/.cargo/bin:$GOPATH/bin:$PATH
 export PROMPT='%~ %# '
 
 alias pu=pushd
@@ -10,8 +11,13 @@ alias vi=vim
 alias dusort='du -sh *|sort -h'
 alias r_="rename 's/\ /_/g' *"
 
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore consecutive dups in history
+setopt hist_ignore_space      # ignore commands that start with space
+setopt share_history          # share history between shells
+
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 
 ARCH=`uname -s`

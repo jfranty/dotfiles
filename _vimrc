@@ -35,7 +35,7 @@ set   fileformats+=mac
                                 " store swap files in one of these directories
 "set   mouse=a                   " use the mouse
 "set   mousehide                 " hide the mouse pointer when typing
-set   shell=/bin/bash           " set the shell to be bash
+"set   shell=/bin/bash           " set the shell to be bash
 set   suffixes=.aux,.bak,.dvi,.gz,.h,.idx,.o,.ps,.swp,.tar
 set   tags=./tags,./TAGS,tags,TAGS,tags;/
 "set   wildignore=*.o            " tab-complete ignore these files
@@ -72,6 +72,7 @@ set   background=dark           " type in the dark
 set   t_Co=256                  " more colors
 let g:seoul256_background = 233
 colo seoul256
+" colo  gruvbox
 
 
 " ===============================================
@@ -90,19 +91,20 @@ map <C-Z> :shell
 " Mappings for timestamping. This uses an internal command.
 " map ,L  1G/Last update:\s*/e+1<CR>CYDATE<ESC>
 " map ,,L 1G/Last change:\s*/e+1<CR>CYDATE<ESC>
+let mapleader = ","
 
 " Titlise selected text
-vmap ,t :s/\<\(.\)\(\k*\)\>/\u\1\L\2/g<bar>:nohlsearch<cr>
+vmap <Leader>t :s/\<\(.\)\(\k*\)\>/\u\1\L\2/g<bar>:nohlsearch<cr>
 " Titlise a line
-nmap ,t :s/.*/\L&/<bar>:s/\<./\u&/g<bar>:nohlsearch<cr>
+nmap <Leader>t :s/.*/\L&/<bar>:s/\<./\u&/g<bar>:nohlsearch<cr>
 
 " Squeeze empty lines - Converts blocks of empty lines within
 " current visual into one empty line.
-map ,Sel :g/^$/,/./-j
+map <Leader>Sel :g/^$/,/./-j
 
 " Squeeze blank lines - Converts blocks of blank lines within
 " current visual into one empty line.
-map ,Sbl :g/^$/,/./-j
+map <Leader>Sbl :g/^$/,/./-j
 
 " Mappings for C-style comment headers.
 map <F5> i/*****<Space>*****/<Esc>7ha<Space>
@@ -110,12 +112,12 @@ map <F5> i/*****<Space>*****/<Esc>7ha<Space>
 " Mappings to comment blocks of code.
 "  vmap ,# "zdi#if 0<CR><C-R>z#endif<CR><ESC>
 "  vmap ,* :s/#\(if 0\\|endif\)\n//<CR>
-map ,/ :s/^/\/\//<CR> <Esc>:nohlsearch<CR>
-map ,# :s/^/#/<CR> <Esc>:nohlsearch <CR>
-map ," :s/^/\"/<CR> <Esc>:nohlsearch<CR>
-map ,% :s/^/%/<CR> <Esc>:nohlsearch<CR>
+map <Leader>/ :s/^/\/\//<CR> <Esc>:nohlsearch<CR>
+map <Leader># :s/^/#/<CR> <Esc>:nohlsearch <CR>
+map <Leader>" :s/^/\"/<CR> <Esc>:nohlsearch<CR>
+map <Leader>% :s/^/%/<CR> <Esc>:nohlsearch<CR>
 " Mapping to uncomment blocks of code.
-map ,c :s/^\/\/\\|^--\\|^> \\|^[#"%!;]//<CR> <Esc>:nohlsearch<CR>
+map <Leader>c :s/^\/\/\\|^--\\|^> \\|^[#"%!;]//<CR> <Esc>:nohlsearch<CR>
 
 " Emacs/bash style command-line
 cnoremap    <C-A>   <Home>
@@ -148,10 +150,10 @@ autocmd FileType sh               set sw=4 sts=8
 autocmd FileType yacc             set noet sts=8 tw=0
 
 " Formatting
-au FileType javascript            setlocal formatprg=prettier
+" au FileType javascript            setlocal formatprg=prettier
 au FileType json                  setlocal formatprg=prettier\ --parser\ json
-au FileType typescript            setlocal formatprg=prettier\ --parser\ typescript
-au FileType javascript.jsx        setlocal formatprg=prettier\ --parser\ typescript
+" au FileType typescript            setlocal formatprg=prettier\ --parser\ typescript
+" au FileType javascript.jsx        setlocal formatprg=prettier\ --parser\ typescript
 
 function ShowGitDiff()
   new +set\ filetype=diff | silent read !git diff --cached
@@ -185,3 +187,6 @@ let g:neoformat_enabled_json = ['prettier']
 " autocmd BufWritePre *.{json} Neoformat
 
 let g:sqlutil_align_comma = 1
+
+let g:prettier#autoformat_config_files = ['.prettierrc', 'prettier.config.js']
+let g:prettier#autoformat_config_present = 1
