@@ -1,6 +1,8 @@
 [user]
 	name = Jason Frantz
 	email = jasondfrantz@gmail.com
+[core]
+	pager = delta
 [credential]
 	helper = store
 [alias]
@@ -20,5 +22,12 @@
 	default = simple
 [diff]
 	tool = vimdiff
+	colorMoved = default
 [difftool]
 	prompt = false
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	    navigate = true
+[merge]
+	conflictstyle = diff3

@@ -183,7 +183,7 @@ let g:ale_fix_on_save = 1
 let g:neoformat_enabled_css = ['prettier']
 let g:neoformat_enabled_less = ['prettier']
 autocmd BufWritePre *.{css,less} Neoformat
-let g:neoformat_enabled_json = ['prettier']
+" let g:neoformat_enabled_json = ['prettier']
 " autocmd BufWritePre *.{json} Neoformat
 
 let g:sqlutil_align_comma = 1
