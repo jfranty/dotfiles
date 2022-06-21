@@ -1,40 +1,35 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
-" Let Vundle manage Vundle
-Plugin 'VundleVim/Vundle.vim'
+Plug 'guns/vim-clojure-static'
+Plug 'jpalardy/vim-slime'
+Plug 'tomtom/tcomment_vim'
+Plug 'fatih/vim-go'
+Plug 'ivanov/vim-ipython'
+Plug 'rust-lang/rust.vim'
+Plug 'vim-scripts/Align'
+Plug 'vim-scripts/SQLUtilities'
+Plug 'uarun/vim-protobuf'
+Plug 'solarnz/thrift.vim'
+" Plug 'pangloss/vim-javascript'
+" Plug 'leafgarland/typescript-vim'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'prettier/vim-prettier'
+Plug 'tpope/vim-surround'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'racer-rust/vim-racer'
+Plug 'sbdchd/neoformat'
+Plug 'w0rp/ale'
+Plug 'styled-components/vim-styled-components'
+Plug 'airblade/vim-gitgutter'
+Plug 'wincent/ferret'
+" Plug 'morhetz/gruvbox'
+Plug 'junegunn/seoul256.vim'
+Plug 'jparise/vim-graphql'
 
-Plugin 'guns/vim-clojure-static'
-Plugin 'jpalardy/vim-slime'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'fatih/vim-go'
-Plugin 'ivanov/vim-ipython'
-Plugin 'rust-lang/rust.vim'
-Plugin 'vim-scripts/Align'
-Plugin 'vim-scripts/SQLUtilities'
-Plugin 'uarun/vim-protobuf'
-Plugin 'solarnz/thrift.vim'
-" Plugin 'pangloss/vim-javascript'
-" Plugin 'leafgarland/typescript-vim'
-Plugin 'MaxMEllon/vim-jsx-pretty'
-" Plugin 'peitalin/vim-jsx-typescript'
-Plugin 'HerringtonDarkholme/yats.vim'
-Plugin 'prettier/vim-prettier'
-Plugin 'tpope/vim-surround'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'racer-rust/vim-racer'
-Plugin 'sbdchd/neoformat'
-Plugin 'w0rp/ale'
-Plugin 'styled-components/vim-styled-components'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'wincent/ferret'
-" Plugin 'morhetz/gruvbox'
-Plugin 'junegunn/seoul256.vim'
-Plugin 'jparise/vim-graphql'
-
-call vundle#end()
+call plug#end()
 filetype plugin indent on

@@ -72,7 +72,6 @@ set   background=dark           " type in the dark
 set   t_Co=256                  " more colors
 let g:seoul256_background = 233
 colo seoul256
-" colo  gruvbox
 
 
 " ===============================================
