@@ -6,6 +6,7 @@
 [credential]
 	helper = store
 [alias]
+	d = diff --ignore-all-space
 	last = log --graph --decorate --oneline -n 10
 	lg = log --graph --decorate --oneline
 	lgf = log --stat --decorate
@@ -20,6 +21,7 @@
 	ui = auto
 [push]
 	default = simple
+	autoSetupRemote = true
 [diff]
 	tool = vimdiff
 	colorMoved = default

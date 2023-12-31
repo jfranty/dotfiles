@@ -173,9 +173,14 @@ let g:racer_cmd = expand("~/.cargo/bin/racer")
 
 let g:jsx_ext_required = 0
 
+" eslint is way too slow
+" let g:ale_linters_ignore = {
+" \  'javascript': ['eslint'],
+" \  'typescript': ['eslint'],
+" \}
 let g:ale_fixers = {
-\  'javascript': ['eslint'],
-\  'typescript': ['eslint'],
+\  'javascript': ['prettier'],
+\  'typescript': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
 

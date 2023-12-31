@@ -11,6 +11,10 @@ alias vi=vim
 alias dusort='du -sh *|sort -h'
 alias r_="rename 's/\ /_/g' *"
 
+# make history much larger
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_dups       # ignore consecutive dups in history
 setopt hist_ignore_space      # ignore commands that start with space
