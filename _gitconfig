@@ -30,6 +30,6 @@
 [interactive]
 	diffFilter = delta --color-only
 [delta]
-	    navigate = true
+        navigate = true
 [merge]
 	conflictstyle = diff3

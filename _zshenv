@@ -6,10 +6,14 @@ export PROMPT='%~ %# '
 
 alias pu=pushd
 alias po=popd
-alias vi=vim
 
 alias dusort='du -sh *|sort -h'
 alias r_="rename 's/\ /_/g' *"
+
+# alias vi=vim
+alias vi='nvim'
+alias vim='nvim'
+alias vimdiff='nvim -d'
 
 # make history much larger
 export HISTFILESIZE=1000000000
@@ -20,9 +24,9 @@ setopt hist_ignore_dups       # ignore consecutive dups in history
 setopt hist_ignore_space      # ignore commands that start with space
 setopt share_history          # share history between shells
 
-export NVM_DIR="$HOME/.nvm"
+# export NVM_DIR="$HOME/.nvm"
 # [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 
 ARCH=`uname -s`
 if [[ $ARCH == "Darwin" ]]; then
@@ -30,5 +34,8 @@ if [[ $ARCH == "Darwin" ]]; then
 else
     alias ls='ls -h --color=tty'
 fi
+
+# https://consoledonottrack.com/
+export DO_NOT_TRACK=1
 
 [ -f ~/.zshenv.local ] && . ~/.zshenv.local

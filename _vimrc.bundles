@@ -6,7 +6,7 @@ call plug#begin()
 Plug 'guns/vim-clojure-static'
 Plug 'jpalardy/vim-slime'
 Plug 'tomtom/tcomment_vim'
-Plug 'fatih/vim-go'
+" Plug 'fatih/vim-go'
 Plug 'ivanov/vim-ipython'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-scripts/Align'
