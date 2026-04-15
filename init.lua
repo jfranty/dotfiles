@@ -17,6 +17,8 @@ vim.g.maplocalleader = ' '
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+vim.opt.autoread = true
+
 local function map(mode, l, r, opts)
   vim.keymap.set(mode, l, r, opts)
 end
@@ -26,6 +28,8 @@ map({ 'n', 'v' }, '^', ':noh<CR>')
 -- Emacs/bash style command-line
 map({ 'c' }, '<C-A>', '<Home>', { noremap = true })
 map({ 'c' }, '<C-E>', '<End>', { noremap = true })
+vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<CR>')
+vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
 
 vim.g.augment_workspace_folders = {'~/src/sigma/slate'}
 
@@ -88,19 +92,23 @@ require('lazy').setup({
   --   end,
   -- },
 
-  -- {
-  --   'stevearc/conform.nvim',
-  --   opts = {
-  --     format_on_save = {
-  --       -- These options will be passed to conform.format()
-  --       timeout_ms = 500,
-  --       lsp_format = "fallback",
-  --     },
-  --     formatters_by_ft = {
-  --       javascript = { "prettierd", "prettier", stop_after_first = true },
-  --     },
-  --   },
-  -- },
+  {
+    'stevearc/conform.nvim',
+    opts = {
+      format_on_save = {
+        -- These options will be passed to conform.format()
+        timeout_ms = 500,
+        lsp_format = "fallback",
+      },
+      formatters_by_ft = {
+        -- javascript = { "oxfmt", "prettierd", "prettier", stop_after_first = true },
+        javascript = { "oxfmt", "oxlint", stop_after_first = true },
+        typescript = { "oxfmt", "oxlint", stop_after_first = true },
+        javascriptreact = { "oxfmt", "oxlint", stop_after_first = true },
+        typescriptreact = { "oxfmt", "oxlint", stop_after_first = true },
+      },
+    },
+  },
 
 --  'prettier/vim-prettier',
 --  -- 'leafgarland/typescript-vim',
@@ -160,9 +168,9 @@ require('mason').setup()
 
 local nvim_lsp = require('lspconfig')
 
-nvim_lsp.ts_ls.setup({
+vim.lsp.config('ts_ls', {
   init_options = {
-    maxTsServerMemory = 4096, -- Limit memory usage
+    maxTsServerMemory = 8192, -- Limit memory usage
   },
   handlers = {
     ['textDocument/publishDiagnostics'] = vim.lsp.with(
@@ -172,6 +180,9 @@ nvim_lsp.ts_ls.setup({
     ),
   },
 })
+vim.lsp.enable('ts_ls')
+
+vim.lsp.enable('oxlint')
 
 -- Remap Ctrl-] to use LSP definition instead of tags
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -183,3 +194,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<C-t>', '<C-o>', opts) -- Go back (like with tags)
   end,
 })
+
+vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"

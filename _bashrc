@@ -55,3 +55,4 @@ o2b() { /bin/echo 2o 8i "$*" p | /usr/bin/dc; }
 b2h() { /bin/echo 16o 2i "$*" p | /usr/bin/dc; }
 b2d() { /bin/echo 2i "$*" p | /usr/bin/dc; }
 b2o() { /bin/echo 8o 2i "$*" p | /usr/bin/dc; }
+. "$HOME/.cargo/env"
